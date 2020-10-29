@@ -11,10 +11,10 @@ class BaseModel():
     main class BaseModel to take cara of initialization, serialization,
     and deserializatoin of your future instances
     """
-    def __init__(self, id, created_at, updated_at):
+    def __init__(self):
         """
         """
-        self.id = uuid.uuid4()
+        self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
