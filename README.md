@@ -40,7 +40,7 @@ The console will be a tool to validate this storage engine.
         <a href="https://twitter.com/CristhianCarbo9" target="_blank">
             <img alt="twitter_page" src="https://raw.githubusercontent.com/EckoJuan/Readme_template/master/images/twitter.png" style="float: center; margin-right: 10px" height="50" width="50">
         </a>
-        <a href="https://www.linkedin.com/in/jiseth-pe%C3%B1a-arias-82b9a363/" target="_blank">
+        <a href="https://www.linkedin.com/in/cristhian-carbonell-2b517b1b0/" target="_blank">
             <img alt="linkedin_page" src="https://raw.githubusercontent.com/EckoJuan/Readme_template/master/images/linkedin.png" style="float: center; margin-right: 10px" height="50"  width="50">
         </a>
         <a>
