@@ -5,12 +5,16 @@ For this project, students are expected to look at these concepts:
 - [Python packages](https://intranet.hbtn.io/concepts/66)
 - [AirBnB clone](https://intranet.hbtn.io/concepts/74)
 
-![imagen](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20201028%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201028T232945Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=4054f4fd309127b61bad874c26c3e0317d6a20c7924fbf82dcf1abb3a53c0de8)
+![imagen](https://github.com/Cristhian-Carbonell/AirBnB_clone/blob/master/Imagen/65f4a1dd9c51265f49d0.png)
 
 ## Background Context
 
 ### Welcome to the AirBnB clone project! (The Holberton B&B)
 Before starting, please read the **AirBnB** concept page.
+
+<video width="100%" height="100%" controls>
+<source src="https://www.youtube.com/watch?v=E12Xc3H2xqo&feature=emb_title" type="video/mp4">
+</video>
 
 [![ScreenShot]()](https://www.youtube.com/watch?v=E12Xc3H2xqo&feature=emb_title)
 
@@ -131,6 +135,6 @@ EOF  help  quit
 (hbnb) 
 $
 ```
-![imagen](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20201028%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201028T232945Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=3553a2f24a9098e21b4efa8c185c15fbcec0bc44295dd4de2b813546b1b0a343)
+![imagen](https://github.com/Cristhian-Carbonell/AirBnB_clone/blob/master/Imagen/815046647d23428a14ca.png)
 
 [![ScreenShot]()](https://www.youtube.com/watch?v=p00ES-5K4C8&feature=emb_title)
