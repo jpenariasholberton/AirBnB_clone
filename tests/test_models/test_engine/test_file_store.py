@@ -1,48 +1,55 @@
 #!/usr/bin/python3
+"""Unittesting module for BaseModel class
 """
-This is a test for FileStorage module
-"""
-
-import unittest
-from models.engine.file_storage import FileStorage
-from models.engine import file_storage
+import models
+from models.base_model import BaseModel
 import os
+import unittest
 
 
-class Test_fileStorage(unittest.TestCase):
-    """ Class that tests the fileStorage class """
+class TestBaseModel(unittest.TestCase):
+    """Unittesting class
+    """
 
-    def test_doc_module(self):
-        """Method that tests if the module has documentation"""
-        docMod1 = file_storage.__doc__
-        docMod2 = file_storage.__doc__
-        self.assertSequenceEqual(docMod1, docMod2)
+    def test_docs(self):
+        """Tests if everything is documented
+        """
+        #  Module check
+        self.assertIsNotNone(models.base_model.__doc__)
 
-    def test_doc_class(self):
-        """Method that tests if the class has documentation"""
-        docClass1 = FileStorage.__doc__
-        docClass2 = FileStorage.__doc__
-        self.assertSequenceEqual(docClass1, docClass2)
+        #  Class check
+        self.assertIsNotNone(BaseModel.__doc__)
 
-    def test_doc_methods(self):
-        """Method that tests if the methods have documentation"""
-        for metd in dir(FileStorage):
-            self.assertSequenceEqual(metd.__doc__, metd.__doc__)
+        # Methods check
+        self.assertIsNotNone(BaseModel.__init__.__doc__)
+        self.assertIsNotNone(BaseModel.__str__.__doc__)
+        self.assertIsNotNone(BaseModel.save.__doc__)
+        self.assertIsNotNone(BaseModel.to_dict.__doc__)
 
-    def test_execution_permissions(self):
-        """ Method that test for check the execution permissions """
-        read = os.access('models/engine/file_storage.py', os.R_OK)
+    def test_exec_permissions(self):
+        """Method that test for check the execution permissions
+        """
+        read = os.access('models/base_model.py', os.R_OK)
         self.assertTrue(read)
-        write = os.access('models/engine/file_storage.py', os.W_OK)
+        write = os.access('models/base_model.py', os.W_OK)
         self.assertTrue(write)
-        exect = os.access('models/engine/file_storage.py', os.X_OK)
+        exect = os.access('models/base_model.py', os.X_OK)
         self.assertTrue(exect)
 
     def test_is_an_instance(self):
-        """Method that check if fileStorageInstance is an instance
-        of FileStorage()"""
-        fileStorageInstance = FileStorage()
-        self.assertIsInstance(fileStorageInstance, FileStorage)
+        """Method that check if BaseModelInstance is an instance
+        of BaseModel()
+        """
+        BaseModelInstance = BaseModel()
+        self.assertIsInstance(BaseModelInstance, BaseModel)
+
+    def test_different_id(self):
+        """Method that check if each instance that is created has
+        a unique id
+        """
+        instance1 = BaseModel()
+        instance2 = BaseModel()
+        self.assertNotEqual(instance1, instance2)
 
 if __name__ == '__main__':
     unittest.main()
