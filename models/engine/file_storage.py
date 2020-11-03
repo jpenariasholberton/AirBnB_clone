@@ -2,7 +2,6 @@
 """
 Class FileStorage
 """
-
 import json
 from models.base_model import BaseModel
 from models.user import User
@@ -47,10 +46,12 @@ class FileStorage():
         """
         Method deserializes the JSON file to __objects
         """
+        new = {}
         try:
             with open(self.__file_path, "r", encoding="utf-8") as json_file:
-                self.__objects = json.load(json_file)
-                for key, value in self.__objects.items():
-                    self.__objects[key] = BaseModel(value)
+                new = json.load(json_file)
+                for key, value in new.items():
+                    self.__objects[key] = self.name_class[value["__class__"]](
+                        **value)
         except:
             pass
