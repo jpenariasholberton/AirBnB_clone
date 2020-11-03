@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 This is a test for for BaseModel class
 """
 
@@ -40,12 +40,14 @@ class Test_Base_Model(unittest.TestCase):
         self.assertTrue(exect)
 
     def test_is_an_instance(self):
-        """Method that check if BaseModelInstance is an instance of BaseModel()"""
+        """Method that check if BaseModelInstance is an instance
+        of BaseModel()"""
         BaseModelInstance = BaseModel()
         self.assertIsInstance(BaseModelInstance, BaseModel)
 
     def test_different_id(self):
-        """Method that check if each instance that is created has a unique id"""
+        """Method that check if each instance that is created has
+        a unique id"""
         instance1 = BaseModel()
         instance2 = BaseModel()
         self.assertNotEqual(instance1, instance2)
@@ -55,4 +57,3 @@ class Test_Base_Model(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

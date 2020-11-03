@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" 
-This is a test for FileStorage module 
+"""
+This is a test for FileStorage module
 """
 
 import unittest
@@ -39,7 +39,8 @@ class Test_fileStorage(unittest.TestCase):
         self.assertTrue(exect)
 
     def test_is_an_instance(self):
-        """Method that check if fileStorageInstance is an instance of FileStorage()"""
+        """Method that check if fileStorageInstance is an instance
+        of FileStorage()"""
         fileStorageInstance = FileStorage()
         self.assertIsInstance(fileStorageInstance, FileStorage)
 
