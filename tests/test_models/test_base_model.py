@@ -3,7 +3,7 @@
 This is a test for for BaseModel class
 """
 
-
+import models
 import unittest
 from models.base_model import BaseModel
 from models import base_model
@@ -15,20 +15,20 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_doc_module(self):
         """Method that tests if the module has documentation"""
-        docMod1 = base_model.__doc__
-        docMod2 = base_model.__doc__
-        self.assertSequenceEqual(docMod1, docMod2)
+        self.assertIsNotNone(models.base_model.__doc__)
 
     def test_doc_class(self):
         """Method that tests if the class has documentation"""
-        docClass1 = BaseModel.__doc__
-        docClass2 = BaseModel.__doc__
-        self.assertSequenceEqual(docClass1, docClass2)
+        self.assertIsNotNone(BaseModel.__doc__)
 
     def test_doc_methods(self):
         """Method that tests if the methods have documentation"""
-        for metd in dir(BaseModel):
-            self.assertSequenceEqual(metd.__doc__, metd.__doc__)
+        self.assertIsNotNone(BaseModel.__init__.__doc__)
+        self.assertIsNotNone(BaseModel.__str__.__doc__)
+        self.assertIsNotNone(BaseModel.save.__doc__)
+        self.assertIsNotNone(BaseModel.to_dict.__doc__)
+        """for metd in dir(BaseModel):
+            self.assertSequenceEqual(metd.__doc__, metd.__doc__)"""
 
     def test_execution_permissions(self):
         """ Method that test for check the execution permissions """
@@ -36,7 +36,7 @@ class Test_Base_Model(unittest.TestCase):
         self.assertTrue(read)
         write = os.access('models/base_model.py', os.W_OK)
         self.assertTrue(write)
-        exect = os.access('models/base_model.py.py', os.X_OK)
+        exect = os.access('models/base_model.py', os.X_OK)
         self.assertTrue(exect)
 
     def test_is_an_instance(self):
