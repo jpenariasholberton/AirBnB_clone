@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args[0]) == 0:
             print("** class name missing **")
         elif args[0] not in self.name_class:
-            print("** class doesn exist **")
+            print("** class doesn't exist **")
         else:
             new_obj = self.name_class[args[0]]()
             new_obj.save()
@@ -140,8 +140,7 @@ class HBNBCommand(cmd.Cmd):
             all_objs = storage.all()
             try:
                 objectToUpdate = all_objs[args[0] + '.' + args[1]]
-                # value = args[3].replace("\"", "")
-                objectToUpdate.__dict__[args[2]] = eval(args[3])
+                objectToUpdate.__dict__[args[2]] = eval(value)
                 storage.save()
             except KeyError:
                 print("** no instance found **")
