@@ -140,7 +140,7 @@ class HBNBCommand(cmd.Cmd):
             all_objs = storage.all()
             try:
                 objectToUpdate = all_objs[args[0] + '.' + args[1]]
-                objectToUpdate.__dict__[args[2]] = args[3]
+                objectToUpdate.__dict__[args[2]] = eval(args[3])
                 storage.save()
             except KeyError:
                 print("** no instance found **")
