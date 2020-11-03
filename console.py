@@ -125,10 +125,11 @@ class HBNBCommand(cmd.Cmd):
         Updates an instance based on the class name and
         id by adding or updating attribute
         """
-        args = arg.split(" ")
-        if len(args[0]) == 0:
+        if arg == "":
             print("** class name missing **")
-        elif args[0] not in self.name_class:
+            return
+        args = argv.split(arg)
+        if args[0] not in self.name_class:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
