@@ -145,5 +145,33 @@ class HBNBCommand(cmd.Cmd):
             except KeyError:
                 print("** no instance found **")
 
+    def default(self, line):
+        """
+        """
+        if not '.' in line:
+            print("*** Unknown syntax: " + line)
+            return
+        No_commands = {"all()": self.do_all, "count()": self.do_count}
+        args = line.split(".")
+        if args[0] not in self.name_class:
+            print("*** Unknown syntax: " + line)
+        elif len(args) != 2:
+            print("*** Unknown syntax: " + line)
+        else:
+            if args[1] in No_commands:
+                No_commands[args[1]](args[0])
+    
+    def do_count(self, arg):
+        """
+        """
+        No_count = 0
+        all_objs = storage.all()
+        for key, obj in all_objs.items():
+            if arg in obj.__str__():
+                No_count += 1
+        print(No_count)
+
+    
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
