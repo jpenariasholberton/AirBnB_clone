@@ -141,6 +141,7 @@ class HBNBCommand(cmd.Cmd):
             try:
                 objectToUpdate = all_objs[args[0] + '.' + args[1]]
                 if objectToUpdate == all_objs[args[0] + '.' + args[1]]:
+                    """
                     try:
                         value = int(args[3])
                     except ValueError:
@@ -148,7 +149,9 @@ class HBNBCommand(cmd.Cmd):
                             value = float(args[3])
                         except ValueError:
                             value = args[3]
-                    objectToUpdate.__dict__[args[2]] = value
+                    """                     
+                    value = args[3].replace("\"", "")
+                    objectToUpdate.__dict__[args[2]] = eval(value)
                     storage.save()
             except KeyError:
                 print("** no instance found **")
