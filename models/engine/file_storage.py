@@ -2,24 +2,27 @@
 """
 Class FileStorage
 """
-import json 
+
+import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage():
     """
-    The class FileStorage serializes instances to a JSON 
+    The class FileStorage serializes instances to a JSON
     file and deserializes JSON file to instances.
     """
     __file_path = "file.json"
     __objects = {}
-    
+    name_class = {"BaseModel": BaseModel, "User": User}
+
     def all(self):
         """
         Returns the dictionary __objects
         """
         return self.__objects
-  
+
     def new(self, obj):
         """
         Method sets in __objects the obj with key <obj class name>.id
@@ -32,7 +35,10 @@ class FileStorage():
         """
         dic = {}
         for key, value in self.__objects.items():
-            dic[key] = value.to_dict() if isinstance(value, BaseModel) else value
+            if isinstance(value, BaseModel):
+                dic[key] = value.to_dict()
+            else:
+                dic[key] = value
             # dic[key] = value.to_dict()
         with open(self.__file_path, "w") as json_file:
             json.dump(dic, json_file)
